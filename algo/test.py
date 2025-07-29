@@ -4,3 +4,9 @@ tmp.append([0] * 2)
 tmp.extend([0, 0])
 
 print(tmp)
+
+for i in range(10):
+    if i % 2 == 0:
+        i += 1
+
+    print(i)
