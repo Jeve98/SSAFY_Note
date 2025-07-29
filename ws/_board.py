@@ -1,10 +1,15 @@
 # 아래 함수를 수정하시오.
-def find_min_max(numbers):
-    mini = min(numbers)
-    maxi = max(numbers)
+def add_item_to_dict(dictionary, key, val):
+    new_dict = dictionary.copy()
+    new_dict.update({key: val})
+    # new_dict[key] = val
 
-    return (mini, maxi)
+    return new_dict
 
 
-result = find_min_max([3, 1, 7, 2, 5])
-print(result)  # (1, 7)
+my_dict = {'name': 'Alice', 'age': 25}
+result = add_item_to_dict(my_dict, 'country', 'USA')
+print(result)
+
+
+
