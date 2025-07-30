@@ -1,15 +1,21 @@
-# 아래 함수를 수정하시오.
-def add_item_to_dict(dictionary, key, val):
-    new_dict = dictionary.copy()
-    new_dict.update({key: val})
-    # new_dict[key] = val
+# 아래 클래스를 수정하시오.
+class Person:
+    number_of_people = 0
 
-    return new_dict
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        Person.increase_people()
+
+    @classmethod
+    def increase_people(cls):
+        cls.number_of_people += 1
+    
+    def introduce(self):
+        print(f"제 이름은 {self.name} 이고, 저는 {self.age} 살 입니다.")
 
 
-my_dict = {'name': 'Alice', 'age': 25}
-result = add_item_to_dict(my_dict, 'country', 'USA')
-print(result)
-
-
+person1 = Person("Alice", 25)
+person1.introduce()
+print(Person.number_of_people)
 

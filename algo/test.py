@@ -1,12 +1,15 @@
-tmp = [1, 2, 3]
-tmp.insert(0, '0' * 2)
-tmp.append([0] * 2)
-tmp.extend([0, 0])
+test = 0
 
-print(tmp)
+def testing():
+    test = 10
 
-for i in range(10):
-    if i % 2 == 0:
-        i += 1
+    def testing1():
+        global test
+        test = 20
 
-    print(i)
+    testing1()
+    print(test)
+    return test
+
+test = testing()
+print(test)
