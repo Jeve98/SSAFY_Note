@@ -1,15 +1,2 @@
-test = 0
-
-def testing():
-    test = 10
-
-    def testing1():
-        global test
-        test = 20
-
-    testing1()
-    print(test)
-    return test
-
-test = testing()
-print(test)
+data = list(map(lambda x : x + 1, map(int, input().split())))  # [0] : column, [1] : row
+print(data)
