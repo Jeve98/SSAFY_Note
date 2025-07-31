@@ -57,3 +57,21 @@ ForTest.add(100, 200)
 print()
 # __str__
 print(t1, t2, sep='\n')
+print()
+
+# 데코레이터
+def new_decorator(func):
+    def wrapper():
+        print('함수 실행 전')
+        result = func()
+        print('함수 실행 후')
+
+        return result
+    
+    return wrapper
+
+@new_decorator
+def new_func():
+    print('원본 실행')
+
+new_func()
