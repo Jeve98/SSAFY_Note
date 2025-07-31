@@ -1,7 +1,4 @@
-test = [[1, 2, 3], [4, 5, 6,], [7, 8, 9]]
-print(list(map(list, zip(*test[::-1]))))
+dic = {'key0' : 10, 'key1' : 20}
 
-st = 'SEa efK'
-for i in st:
-    if i.isupper():
-        print(i)
+key = dic.keys()
+print(list(key)[0])
