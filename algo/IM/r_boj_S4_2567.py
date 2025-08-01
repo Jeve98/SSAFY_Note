@@ -2,6 +2,7 @@
 # 2. 꼭짓점의 계산이 진행되지 않음
 
 # BF
+"""
 mapDate = [[0 for _ in range(100)] for _ in range(100)]
 
 count = int(input())
@@ -60,6 +61,7 @@ for i in range(100):
 
 for i in mapDate:
     print(i)
+"""
 
 # 1번 해결
 # 내부값을 0과 1이 아닌 다른 값으로 초기화, 변 검사 시 해당 셀의 값이 0인 경우에만 1로 초기화
@@ -71,3 +73,23 @@ for i in mapDate:
 
 # 결국 BF로 돌면서 사방을 확인하는 것이 유일한 BF적 해결 방법
 # Set을 이용하는 효율적인 방법도 있다
+
+count = int(input())
+
+totalSet = set()
+for i in range(count):
+    data = list(map(int, input().split()))  # [0] : column start point, [1] : row end point
+
+    for row in range(data[1] - 9, data[1] + 1):
+        for col in range(data[0], data[0] + 10):
+            totalSet.add((row, col))
+
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+ans = 0
+for target in totalSet:
+    for find in range(4):
+        if (target[0] + dx[find], target[1] + dy[find]) not in totalSet:
+            ans += 1
+
+print(ans)
