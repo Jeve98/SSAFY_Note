@@ -14,6 +14,7 @@
 서버 - 클라이언트 구조 : 클라이언트의 요청에 맞춰 서버에서 응답을 하는 서비스 구조
 ※ URL 후술 ? : parameter session
 - API : 클라이언트가 원하는 기능을 수행하기 위해 서버 측에서 만들어 놓은 프로그램 (ex.CRUD-저장, 조회, 수정, 삭제)
+    ※ 파라미터의 경우, dictionary 변수를 이용하여 저장하고 get() 함수의 parms 키워드 인자로 사용
     - OpenWeatherMap API - 'Current Weather Data' : (call : 60/m, 1,000,000/month)
     - 금융상품통합비교공시 API
     - TMDB API
