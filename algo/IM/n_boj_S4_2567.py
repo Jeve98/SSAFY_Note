@@ -43,7 +43,7 @@ for i in range(100):
             # count가 2보다 크면 선 (둘레)
             if rCount >= 2:
                 total += rCount
-                print(rCount)
+                # print(rCount)
             
             # count 초기화
             rCount = 0
@@ -56,7 +56,7 @@ for i in range(100):
             
             cCount = 0
 
-print(total)
+#print(total)
 
 for i in mapDate:
     print(i)
@@ -68,3 +68,6 @@ for i in mapDate:
 # column - row 순회 중, 1 발견 시 count ++, 0 발견 시 count 확인, 2 이상일 경우, count 수치를 최종값에 추가하고 count 초기화
 
 # 포개지는 걸 해결하니 겹쳐지는게 문제네
+
+# 결국 BF로 돌면서 사방을 확인하는 것이 유일한 BF적 해결 방법
+# Set을 이용하는 효율적인 방법도 있다
