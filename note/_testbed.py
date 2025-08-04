@@ -14,9 +14,10 @@ class Boss(Monster):
 
     def __init__(self, hp, lv):
         super().__init__(hp * 10, lv + Boss.additional_lv)
-        #self.exp = super().exp * 100
+        # self.exp = super().exp * 100
 
     # ... 보스 패턴 ...
+
 
 normalM = Monster(hp=10, lv=1)
 print(f'normal, HP : {normalM.hp}, LV : {normalM.lv}')
