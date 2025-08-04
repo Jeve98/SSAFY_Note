@@ -1,7 +1,2 @@
-test = []
-
-for i in range(5):
-    ls = [0 for _ in range(5)]
-    test.append(ls)
-
-print(test)
+test = [[1, 2], [2, 3], [3, 4], [4, 5]]
+print(test[-4])
