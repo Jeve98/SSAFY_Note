@@ -96,7 +96,8 @@ for i in range(1, len(count)):
     count[i] += count[i-1]
 
 ans = [0] * length
-for i in range(length):
+# for i in range(length-1, -1, -1) -> Stable Sort
+for i in range(length):          # -> Unstable Sort
     count[ls[i]] -= 1
     ans[count[ls[i]]] = ls[i]
 
