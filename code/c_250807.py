@@ -72,7 +72,7 @@ print(f'bubble : {ls2}')
 # binary search
 search = arr[0]
 arr.sort()
-# while
+# while 문
 # start = 0
 # end = len(arr) - 1
 # count = 0
@@ -86,6 +86,7 @@ arr.sort()
 #     else:
 #         print(f'count : {count}, search : {search}, find : {arr[middle]}')
 #         break
+# print('none')
 
 
 # 재귀
@@ -95,8 +96,10 @@ arr.sort()
 #         return binary_search(start, middle - 1, arr, find)
 #     elif arr[middle] < find:
 #         return binary_search(middle + 1, end, arr, find)
-#     else:
+#     elif arr[middle] == find:
 #         return middle
+#     else:
+#         return -1
 #
 #
 # ans = binary_search(0, len(arr) - 1, arr, search)

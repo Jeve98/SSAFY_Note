@@ -1,5 +1,3 @@
-test = [[1, 2], [2, 3], [3, 4], [4, 5]]
-print(test[-4])
-
-test = [[0] * 10 for _ in range(5)]
+test = [[1, 2, 3], [0, 2, 3], [10, 2, 1], [-7, 1, 2]]
+test.sort()
 print(test)
