@@ -17,7 +17,7 @@ for i in range(T):
             # row check
             if rowLine[k] == 1:
                 tmp += 1
-            else :
+            else:
                 if tmp == length:
                     count += 1
                 
@@ -31,7 +31,7 @@ for i in range(T):
         for k in range(size):
             if columnLine[j][k] == 1:
                 tmp += 1
-            else :
+            else:
                 if tmp == length:
                     count += 1
                 

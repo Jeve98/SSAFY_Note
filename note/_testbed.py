@@ -1,8 +1,7 @@
-str = '1 2'
-a, b = map(int, str.split())
-print(a)
-print(b)
-
-ls = [2, 1, 35, 21]
-ls.sort()
-print(ls)
+tmp = bin(11)
+tmp = str(tmp)
+count = 0
+for i in tmp:
+    if i == '1':
+        count += 1
+print(count, tmp)
