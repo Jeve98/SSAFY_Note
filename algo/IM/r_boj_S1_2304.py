@@ -32,6 +32,7 @@ while index <= count:
         nextPillar = 1
 
 """
+"""
 # 반례 사이트를 애용하자.
 # 결국 양 사이드에서 가장 큰 놈을 찾아야한다.
 height = 0
@@ -81,5 +82,46 @@ while pointer < len(pillars):
         # 뒷선 기둥보다 낮을 경우
         else:
             pointer += 1
+
+print(vol)
+"""
+
+height = 0
+highest = 0
+for i in range(len(pillars)):
+    if height < pillars[i][1]:
+        height = pillars[i][1]
+        highest = i
+
+# 가장 높은 기둥의 높이 * 1
+vol = pillars[highest][1]
+
+end = highest
+while True:
+    temp = 0
+    for i in range(0, end):
+        if pillars[temp][1] < pillars[i][1]:
+            temp = i
+    vol += (pillars[end][0] - pillars[temp][0]) * pillars[temp][1]
+    end = temp
+
+    if end <= 0:
+        break
+
+start = highest
+while True:
+    temp = start + 1
+    if temp >= len(pillars):
+        break
+
+    for i in range(start + 1, len(pillars)):
+        if pillars[temp][1] < pillars[i][1]:
+            temp = i
+
+    vol += (pillars[temp][0] - pillars[start][0]) * pillars[temp][1]
+    start = temp
+
+    if start >= len(pillars) - 1:
+        break
 
 print(vol)
