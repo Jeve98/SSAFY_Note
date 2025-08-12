@@ -22,13 +22,13 @@ for i in range(T):
             
             # column check
             columnCheckBox[Sudo[move][body] - 1] += 1
-            if(columnCheckBox[Sudo[move][body] - 1] > 1):
+            if columnCheckBox[Sudo[move][body] - 1] > 1:
                 print(f"#{i+1} 0")
                 finish = True
                 break
             
             # 3*3 check
-            if(body % 3 == 0 and move == 0):
+            if body % 3 == 0 and move == 0:
                 # 리스트 컴프리헨션
                 tridCheckBox = [[0 for _ in range(9)] for _ in range(3)]
                 tridNum = 0
