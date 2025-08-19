@@ -1,18 +1,49 @@
-sq = []
-for i in range(4):
-    oneLine = list(map(int, input().split()))
-    sq.append([(oneLine[0], oneLine[1]), (oneLine[2], oneLine[3])])
+pillarCount = int(input())
 
-board = [[0] * 100 for _ in range(100)]
-for one in sq:
-    for i in range(one[0][0], one[1][0]):
-        for j in range(one[0][1], one[1][1]):
-            board[i][j] = 1
+pillars = []
+for i in range(pillarCount):
+    oneLine = list(map(int, input().split()))   # [0]: x pos, [1]: height
+    pillars.append(oneLine)
 
-count = 0
-for i in range(100):
-    for j in range(100):
-        if board[i][j] == 1:
-            count += 1
+highest = 0
+hIndex = 0
+pillars.sort()
+for i in range(pillarCount):
+    if highest < pillars[i][1]:
+        highest = pillars[i][1]
+        hIndex = i
 
-print(count)
+# 가장 높은 기둥의 높이 * 1
+vol = highest
+
+lpointer = 0
+rpointer = hIndex
+tmpHigh = 0
+while True:
+    if rpointer == 0:
+        break
+
+    for i in range(rpointer):
+        if tmpHigh < pillars[i][1]:
+            tmpHigh = pillars[i][1]
+            lpointer = i
+
+    vol += (pillars[rpointer][0] - pillars[lpointer][0]) * tmpHigh
+    rpointer, lpointer, tmpHigh = lpointer, 0, 0
+
+lpointer = hIndex
+rpointer = 0
+tmpHigh = 0
+while True:
+    if lpointer >= pillarCount - 1:
+        break
+
+    for i in range(lpointer + 1, pillarCount):
+        if tmpHigh < pillars[i][1]:
+            tmpHigh = pillars[i][1]
+            rpointer = i
+
+    vol += (pillars[rpointer][0] - pillars[lpointer][0]) * tmpHigh
+    lpointer, rpointer, tmpHigh = rpointer, 0, 0
+
+print(vol)
