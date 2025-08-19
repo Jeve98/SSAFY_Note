@@ -44,8 +44,8 @@ Stack
 
     4. Backtracking : 후보해를 구성하다가 해가 될 수 없다고 판단되면 되돌아가서 다른 경로를 시도하는 방법으로 최적화, 결정 문제에 적용
         ex) N-Queens, 미로, 순열/조합, 부분집합, 스도쿠
-        - Prunning의 유무로 일반적인 DFS와 구분됨
-            ※ Prunning : Promising(유망)하지 않은 경로를 계산에서 제외하는 것
+        - Pruning의 유무로 일반적인 DFS와 구분됨
+            ※ Pruning : Promising(유망)하지 않은 경로를 계산에서 제외하는 것
 
 
 <실습>
