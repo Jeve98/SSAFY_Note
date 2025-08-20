@@ -13,7 +13,7 @@ def backtrack(a, k, n):  # a 주어진 배열, k 결정할 원소, n 원소 개�
             backtrack(a, k + 1, n)
 
 
-def construct_candidates(a, k, n, c):  # 후보 추천천
+def construct_candidates(a, k, n, c):  # 후보 추천
     c[0] = True  # 원소의 포함 여부
     c[1] = False
     return 2
@@ -32,9 +32,6 @@ a = [0] * NMAX
 num = [1, 2, 3, 4]
 backtrack(a, 0, 3)
 
-
-# subset and finding some sum of subset by recursive backtracking
-
 # 분할 정복
 def power(base, exponent):
     if exponent == 0:
@@ -49,6 +46,10 @@ def power(base, exponent):
 
 
 # --실습--
+arr = [i for i in range(1, 6)]
+size = len(arr)
+
+
 # permutation : n개의 원소 중 r개를 뽑아 순서를 고려하고 나열
 def permutation(now):
     # 기저 조건 : 종료 조건
@@ -64,6 +65,12 @@ def permutation(now):
             permutation(now + 1)
             # 다음 i번 째 처리를 위해 방문처리 초기화
             visited[i] = False
+
+
+r = 3
+visited = [False] * size
+result = [0] * r
+permutation(0)
 
 
 # subset
@@ -82,15 +89,5 @@ def subset(now):
         subset(now + 1)
 
 
-arr = [i for i in range(1, 6)]
-size = len(arr)
-
-# permutation
-r = 3
-visited = [False] * size
-result = [0] * r
-permutation(0)
-
-# subset
 out = [False] * size
 subset(0)
