@@ -18,7 +18,7 @@ for case in range(10):
     postCal = []
     for i in cal:
         if i not in '+*':
-            postCal.append(int(i))
+            postCal.append(i)
         else:
             # stack이 비었거나 입력 부호가 기입력된 부호의 top 보다 우선순위가 높은 경우
             if top == -1 or icp[i] > isp[stack[top]]:
@@ -26,10 +26,12 @@ for case in range(10):
                 stack[top] = i
             # stack이 비지 않았고 입력 부호가 기입력된 부호의 top 보다 우선순위가 낮은 경우
             else:
-                # stack이 비었거나 입력 부호가 기입력된 부호의 top 보다 우선순위가 높아질 때까지 반복
-                while top != -1 and icp[i] > isp[stack[top]]:
+                # stack이 빌 경우, 입력 부호를 stack에 추가
+                # 입력 부호가 기입력된 부호의 top 보다 우선순위가 높아질 경우, 입력 부호를 stack에 추가
+                while top > -1 and icp[i] <= isp[stack[top]]:
                     postCal.append(stack[top])
                     top -= 1
+                top += 1
                 stack[top] = i
 
     while top != -1:
@@ -39,9 +41,9 @@ for case in range(10):
     stack = [0] * len(postCal)
     top = -1
     for i in postCal:
-        if i != '+' or i != '*':
+        if i not in '+*':
             top += 1
-            stack[top] = i
+            stack[top] = int(i)
         else:
             if top >= 1:
                 rOperate = stack[top]
