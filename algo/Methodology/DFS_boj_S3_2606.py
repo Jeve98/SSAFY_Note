@@ -1,3 +1,9 @@
+"""
+깊이 탐색을 하는 DFS는 Stack으로 구현된다.
+재귀 함수를 이용하는 것은 그 자체로 Stack을 사용하기에 DFS에 명확히 대응되지만 깊이가 깊을 경우, recursion error를 발생시킨다.
+반복문을 사용하는 것도 별도의 Stack을 생성하여 동작할 수 있기에 DFS 구현에 적합하다.
+"""
+
 # boj 2606
 nodeCount = int(input())
 edgeCount = int(input())

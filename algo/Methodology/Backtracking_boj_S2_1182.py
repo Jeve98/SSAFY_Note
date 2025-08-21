@@ -1,3 +1,7 @@
+"""
+backtracking = DFS + pruning
+"""
+
 # boj 1182
 numCount, targetSum = map(int, input().split())
 numbers = list(map(int, input().split()))
