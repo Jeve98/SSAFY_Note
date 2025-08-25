@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charse="UTF-8">
+        <title>250825-WEB</title>
+        
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .classTester{
+                color: yellow;
+                background-color: blueviolet;
+            }
+            #idTester{
+                color:aqua;
+                background-color: blue;
+            }
+            .Tester1{
+                background-color: darkgrey !important;
+            }
+            .Tester2{
+                background-color: red;
+            }
+            [class^="Tester"]{
+                color: brown;
+                background-color: beige;
+            }
+            .combinator li{
+                font-size: 10px;
+            }
+            .combinator > ul > li{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>250825</h1>
+        
+        <h2>확장프로그램 및 VS-Code에서의 html 작성</h2>
+        <p>- open in browser : html 파일을 브라우저에서 alt B로 실행 가능하게 해주는 확장 프로그램</p>
+        <p>- auto rename tag : 태그 수정 시, 세트로 일치하는 태그도 한 번에 수정해주는 확장 프로그램</p>
+        <p>- highlight matching tag : 서로 일치하는 열림태그와 닫힘태그를 표시해주는 확장 프로그램</p>
+        <p>- live server : html 파일을 우클릭하여 실시간으로 반응하는 페이지를 켜주는 확장 프로그램</p>
+        <p>- '!'를 입력하여 vs-code에서 최소한의 설정을 자동으로 생성 가능</p>
+        
+        <h2>Note</h2>
+        <h3>HTML</h3>
+        <p>- HTML은 텍스트의 구조이자 의미를 나타냄</p>
+        <p>- Heading : h1~6</p>
+        <p>- Paragrphs : p</p>
+        <p>- Ordered List : ol</p>
+        <p>- Unordered List : ul</p>
+        <p>- list item : ls</p>
+        <p>- Emphasis : <em>기울임 - em</em>, <strong>볼드체 - strong</strong></p>
+        <a href="https://google.co.kr">- 하이퍼링크 : a - href 속성 필수</a>
+        
+        <h3 style="color: blue; background-color: black;">CSS</h3>
+        <p class = "classTester">css class selectors testing</p>
+        <p id = "idTester">css id selectors testing</p>
+        <p class = Tester1>css attribute selectors testing1</p>
+        <p class = Tester2>css attribute selectors testing2</p>
+        <ul class="combinator">
+            <li>자손 결합자 폰트 사이즈 10px</li>
+            <ul>
+                <li>자식 결합자 글자 색 빨간색</li>
+            </ul>
+        </ul>
+        
+        <h2>Testbed</h2>
+        <ol>
+            <li><em>list 0</em></li>
+            <li><strong>list 1</strong></li>
+        </ol>
+        <ul>
+            <li>list 0</li>
+            <li>list 1</li>
+        </ul>
+        <img src="image/sample.png" alt="대체 텍스트 출력">
+        <img src="https://picsum.photos/200/300" alt="">
+    </body>
+</html>
