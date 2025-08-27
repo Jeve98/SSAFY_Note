@@ -1,22 +1,3 @@
-C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:859
-    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
-           ^
-TSError: ⨯ Unable to compile TypeScript:
-src/server.ts:2:18 - error TS7016: Could not find a declaration file for module 'cors'. 'C:/Users/SSAFY/Desktop/SSAFY_Note/ai/ws_250826/backend/node_modules/cors/lib/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/cors` if it exists or add a new declaration (.d.ts) file containing `declare module 'cors';`
-
-2 import cors from 'cors';
-                   ~~~~~~
-
-    at createTSError (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:859:12)
-    at reportTSError (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:863:19)
-    at getOutput (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:1077:36)
-    at Object.compile (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:1433:41)
-    at Module.m._compile (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:1617:30)
-    at node:internal/modules/cjs/loader:1820:10
-    at Object.require.extensions.<computed> [as .ts] (C:\Users\SSAFY\Desktop\SSAFY_Note\ai\ws_250826\backend\node_modules\ts-node\src\index.ts:1621:12)
-    at Module.load (node:internal/modules/cjs/loader:1423:32)
-    at Function._load (node:internal/modules/cjs/loader:1246:12)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
-  diagnosticCodes: [ 7016 ]
-}
+Received message: { text: '안녕' }
+OpenAI API Error: 401 Error
+Error Details: 401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************QNQA. You can find your API key at https://platform.openai.com/account/api-keys.
