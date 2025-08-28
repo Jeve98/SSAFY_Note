@@ -5,71 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <style>
+    .product-img {
+      width: 100%;
+      height: 250px; /* 원하는 높이 */
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <div class="d-flex flex-column">
-    <nav class="navbar navbar-expand-lg bg-dark sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="logo" height="50">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Community</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#">Login</a>
-            </li>
-          </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 col-12 col-md-9">
+        <div class="row">
+          <h3>주목 상품</h3>
+          <div class="col-12">
+            <img src="assets/product1.jpg" class="col-12" alt="">
+            <h4>상품 1</h4>
+            <p>상품 정보 추가</p>
+          </div>
+          <div class="col-12">
+            <img src="assets/product2.jpg" class="col-12" alt="">
+            <h4>상품 2</h4>
+            <p>상품 정보 추가</p>
+          </div>
+          <div class="col-12">
+            <img src="assets/product3.jpg" class="col-12" alt="">
+            <h4>상품 3</h4>
+            <p>상품 정보 추가</p>
+          </div>
         </div>
       </div>
-    </nav>
-
-    <div class="card text-bg-dark">
-      <img src="images/header.jpg" class="card-img" alt="header">
-      <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-        <h1 class="card-title display-2">
-          Cinema
-        </h1>
-        <h1 class="card-title display-2">
-          Community
-        </h1>
-        <p></p>
-        <button type="button" class="btn btn-primary">Let's go</button>
+      <div class="col-3 d-none d-md-block">
+        <h3>카테고리</h3>
+        <ul>
+          <li><a href="#">카테고리 1</a></li>
+          <li><a href="#">카테고리 2</a></li>
+          <li><a href="#">카테고리 3</a></li>
+          <li><a href="#">카테고리 4</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="card d-flex flex-column justify-content-center align-items-center">
-      <div class="card-body">
-        <h1 class="card-title">Used Skills</h1>
+    <div class="row">
+      <div class="col-4">
+        <h4>인기 상품</h4>
+        <div class="row">
+          <div class="col-12 offset-md-2 col-md-10 offset-lg-0 col-lg-4">
+            <img src="assets/product4.jpg" class="product-img" alt="">
+            <h4>상품4</h4>
+            <p>상품 정보 추가</p>
+          </div>
+          <div class="col-12 offset-md-2 col-md-10 col-lg-4">
+            <img src="assets/product5.jpg" class="product-img" alt="">
+            <h4>상품5</h4>
+            <p>상품 정보 추가</p>
+          </div>
+        </div>
       </div>
-      <div class="d-flex flex-row justify-content-between">
-        <div class="col-4 text-center">
-          <img src="images/web.png" class="card-img-bottom img-fluid" alt="web">
-          <p>Web</p>
+
+      <div class="col-4">
+        <h4>신상품</h4>
+        <div class="row">
+          <div class="col-12 offset-md-2 col-md-10 offset-lg-0 col-lg-4">
+            <img src="assets/product6.jpg" class="product-img" alt="">
+            <h4>상품6</h4>
+            <p>상품 정보 추가</p>
+          </div>
+          <div class="col-12 offset-md-2 col-md-10 col-lg-4">
+            <img src="assets/product7.jpg" class="product-img" alt="">
+            <h4>상품7</h4>
+            <p>상품 정보 추가</p>
+          </div>
         </div>
-        <div class="col-4 text-center">
-          <img src="images/html5.png" class="card-img-bottom img-fluid" alt="html">
-          <p>HTML5</p>
-        </div>
-        <div class="col-4 text-center">
-          <img src="images/css3.png" class="card-img-bottom img-fluid" alt="css">
-          <p>CSS3</p>
+      </div>
+
+      <div class="col-4">
+        <h4>특별 할인</h4>
+        <div class="row">
+          <div class="col-12 offset-md-2 col-md-10 offset-lg-0 col-lg-4">
+            <img src="assets/product8.jpg" class="product-img" alt="">
+            <h4>상품8</h4>
+            <p>상품 정보 추가</p>
+          </div>
+          <div class="col-12 offset-md-2 col-md-10 col-lg-4">
+            <img src="assets/product9.jpg" class="product-img" alt="">
+            <h4>상품9</h4>
+            <p>상품 정보 추가</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer class="fixed-bottom bg-primary p-2 text-white bg-opacity-100 text-center">
-    HTML & CSS project. Created by JEON YEON WOOK
-  </footer>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </body>
