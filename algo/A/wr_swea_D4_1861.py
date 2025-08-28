@@ -10,9 +10,9 @@
 #
 #     maxNum = 0
 #     maxCount = 0
+#     # DFS
 #     for i in range(size):
 #         for j in range(size):
-#             # DFS
 #             stack = [[] for _ in range(size ** 2)]
 #             top = -1
 #             stack[0] = [i, j]
@@ -45,36 +45,36 @@
 #                 maxNum = table[i][j]
 #
 #             # BFS
-#             # queue = [[] for _ in range(size ** 2)]
-#             # front = 0
-#             # rear = 0
-#             # queue[0] = [i, j]
-#             # rear = (rear + 1) % len(queue)
-#             #
-#             # visited = [[False] * size for _ in range(size)]
-#             # visited[queue[front][0]][queue[front][1]] = True
-#             # visitCount = 1
-#             #
-#             # # 상하좌우
-#             # di = [-1, 1, 0, 0]
-#             # dj = [0, 0, -1, 1]
-#             #
-#             # while front != rear:
-#             #     for addI, addJ in zip(di, dj):
-#             #         ni = addI + queue[front][0]
-#             #         nj = addJ + queue[front][1]
-#             #
-#             #         if 0 <= ni < size and 0 <= nj < size and table[ni][nj] - 1 == table[queue[front][0]][queue[front][1]] and visited[ni][nj] is False:
-#             #             queue[rear] = [ni, nj]
-#             #             rear = (rear + 1) % len(queue)
-#             #             visited[ni][nj] = True
-#             #             visitCount += 1
-#             #
-#             #     front = (front + 1) % len(queue)
-#             #
-#             # if maxCount < visitCount:
-#             #     maxCount = visitCount
-#             #     maxNum = table[i][j]
+#             queue = [[] for _ in range(size ** 2)]
+#             front = 0
+#             rear = 0
+#             queue[0] = [i, j]
+#             rear = (rear + 1) % len(queue)
+#
+#             visited = [[False] * size for _ in range(size)]
+#             visited[queue[front][0]][queue[front][1]] = True
+#             visitCount = 1
+#
+#             # 상하좌우
+#             di = [-1, 1, 0, 0]
+#             dj = [0, 0, -1, 1]
+#
+#             while front != rear:
+#                 for addI, addJ in zip(di, dj):
+#                     ni = addI + queue[front][0]
+#                     nj = addJ + queue[front][1]
+#
+#                     if 0 <= ni < size and 0 <= nj < size and table[ni][nj] - 1 == table[queue[front][0]][queue[front][1]] and visited[ni][nj] is False:
+#                         queue[rear] = [ni, nj]
+#                         rear = (rear + 1) % len(queue)
+#                         visited[ni][nj] = True
+#                         visitCount += 1
+#
+#                 front = (front + 1) % len(queue)
+#
+#             if maxCount < visitCount:
+#                 maxCount = visitCount
+#                 maxNum = table[i][j]
 #
 #     print(f'#{case + 1} {maxNum} {maxCount}')
 

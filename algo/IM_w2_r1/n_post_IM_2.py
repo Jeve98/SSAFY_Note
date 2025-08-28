@@ -37,6 +37,48 @@ N*N 배열의 높이가 N줄에 걸쳐 주어짐 (자연수)
 #3 4
 """
 
-# DFS
+T = int(input())
+for case in range(T):
+    size = int(input())
 
-# DP
+    table = []
+    for i in range(size):
+        oneLine = list(map(int, input().split()))
+        table.append(oneLine)
+
+    # # DFS
+    # # 상하좌우
+    # di = [-1, 1, 0, 0]
+    # dj = [0, 0, -1, 1]
+    #
+    # maxCount = 0
+    # for i in range(size):
+    #     for j in range(size):
+    #         stack = [0] * (size ** 2)
+    #         top = 0
+    #         stack[top] = (i, j)
+    #
+    #         tmpMin = table[stack[top][0]][stack[top][1]]
+    #         while top != -1:
+    #             index = []
+    #             for addI, addJ in zip(di, dj):
+    #                 ni = stack[top][0] + addI
+    #                 nj = stack[top][1] + addJ
+    #
+    #                 if 0 <= ni < size and 0 <= nj < size and tmpMin > table[ni][nj]:
+    #                     tmpMin = table[ni][nj]
+    #                     index = [ni, nj]
+    #
+    #             if index:
+    #                 top += 1
+    #                 stack[top] = (index[0], index[1])
+    #             else:
+    #                 break
+    #
+    #         if maxCount < top + 1:
+    #             maxCount = top + 1
+    #
+    # print(f'#{case + 1} {maxCount}')
+
+    # DP
+
