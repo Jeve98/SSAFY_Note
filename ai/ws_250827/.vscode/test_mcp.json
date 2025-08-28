@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "name": "GEMINI PRD UI 기능 테스트",
+      "steps": [
+        {
+          "action": "openPage",
+          "url": "http://localhost:5173/"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "button"
+        },
+        {
+          "action": "evaluate",
+          "script": "Array.from(document.querySelectorAll('button')).map(btn => btn.textContent)"
+        },
+        {
+          "action": "forEach",
+          "items": {
+            "from": "Array.from(document.querySelectorAll('button'))"
+          },
+          "steps": [
+            {
+              "action": "click",
+              "selector": "button:nth-of-type({{index}})"
+            }
+          ]
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "input[type='text'], textarea"
+        },
+        {
+          "action": "type",
+          "selector": "input[type='text'], textarea",
+          "text": "테스트 채팅 메시지"
+        },
+        {
+          "action": "press",
+          "selector": "input[type='text'], textarea",
+          "key": "Enter"
+        },
+        {
+          "action": "waitForTimeout",
+          "timeout": 1000
+        },
+        {
+          "action": "assert",
+          "selector": "*",
+          "textContentIncludes": "테스트 채팅 메시지"
+        }
+      ]
+    }
+  ]
+}
