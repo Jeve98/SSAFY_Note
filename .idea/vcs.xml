@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ai/ws_250827/vibe_coding" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ai/ws_250827/vibe_coding/client/node_modules/ssafy-ai-chatbot-root" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ai/ws_250827/vibe_coding/server/node_modules/ssafy-ai-chatbot-root" vcs="Git" />
   </component>
 </project>
