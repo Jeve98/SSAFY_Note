@@ -1,7 +1,7 @@
-def test(now):
-    for i in range(now, 19, 2):
-        print(f'now: {now}, i: {i}', end=' ')
-        test(i + 4)
-    print()
+def test():
+    return 1, 3
 
-test(3)
+print(test() + test())
+a = [10, 20]
+a[0], a[1] = test() + test()
+print(a)

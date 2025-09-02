@@ -7,31 +7,20 @@ expression = list(input())
 
 visited = [False] * length
 
-"""
-9
-1+2+3+4+5
-15 11
-[False, False, False, True, False, False, False, True, False]
-15 7
-[False, False, False, True, False, False, False, False, False]
-10 11
-[False, False, False, False, False, True, False, True, False]
-15 7
-[False, False, False, False, False, True, False, False, False]
-15 7
-[False, False, False, False, False, False, False, True, False]
-15 3
-[False, False, False, False, False, False, False, False, False]
-15
-"""
+
 def permutation(now):
     global maxCal
+
+    if length == 1:
+        maxCal = int(expression[0])
+        return
+
     tmpExp = expression[:]
 
     for i in range(now, length - 1, 2):
         if not visited[i]:
             visited[i] = True
-            permutation(now + 4)
+            permutation(i + 4)
             visited[i] = False
 
     for i in range(length):
@@ -41,9 +30,6 @@ def permutation(now):
                 tmpExp[j] = tmp
 
     result = calculation(tmpExp)
-
-    print(result, now)
-    print(visited)
 
     if maxCal < result:
         maxCal = result
