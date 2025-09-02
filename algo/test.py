@@ -1,3 +1,7 @@
-ls = [[11, 2, 3], [7, 3, 1], [10, 5, 3]]
-ls.sort()
-print(ls)
+def test(now):
+    for i in range(now, 19, 2):
+        print(f'now: {now}, i: {i}', end=' ')
+        test(i + 4)
+    print()
+
+test(3)
