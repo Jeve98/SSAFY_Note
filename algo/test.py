@@ -1,7 +1,11 @@
-def test():
-    return 1, 3
-
-print(test() + test())
-a = [10, 20]
-a[0], a[1] = test() + test()
-print(a)
+a = int('328D1AF6E4C9BB', 16)
+print(bin(a))
+binA = list(bin(a))
+binA.pop(1)
+print(''.join(binA))
+binA = ''.join(binA[::-1])
+print(binA, len('328D1AF6E4C9BB'))
+code = '0001111010100011011010001100010110100011110101110110100110'
+print(code, len(code))
+print(len('1111010100011011010001100010110100011110101110110100110'))
+print(len('1101110110010011001001110110111101011000101100010100110'))
