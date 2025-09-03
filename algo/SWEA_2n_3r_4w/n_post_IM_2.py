@@ -46,6 +46,8 @@ for case in range(T):
         oneLine = list(map(int, input().split()))
         table.append(oneLine)
 
+    # DP
+
     # # DFS
     # # 상하좌우
     # di = [-1, 1, 0, 0]
@@ -79,6 +81,3 @@ for case in range(T):
     #             maxCount = top + 1
     #
     # print(f'#{case + 1} {maxCount}')
-
-    # DP
-

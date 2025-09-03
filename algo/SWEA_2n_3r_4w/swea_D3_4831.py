@@ -1,4 +1,3 @@
-# swea 4831
 # T : test case (1 <= T <= 50)
 # K N M - K : once move, N : end bus stop, M - charger count
 # x... y... z... : charger location
