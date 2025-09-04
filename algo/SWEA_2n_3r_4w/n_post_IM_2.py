@@ -42,16 +42,40 @@ for case in range(T):
     size = int(input())
 
     table = []
+    order = []
     for i in range(size):
         oneLine = list(map(int, input().split()))
         table.append(oneLine)
 
+        for j in range(size):
+            order.append([oneLine[j], i, j])    # [0]: val, [1]: row-pos, [2]: col-pos
+
+    # # 상하좌우
+    di = [-1, 1, 0, 0]
+    dj = [0, 0, -1, 1]
+
     # DP
+    order.sort()
+    tabulation = [[0] * size for _ in range(size)]
+    tabulation[order[0][1]][order[0][2]] = 1
+
+    for i in range(len(order)):
+        for addI, addJ in zip(di, dj):
+            ni = order[i][1] + addI
+            nj = order[i][2] + addJ
+
+            if 0 <= ni < size and 0 <= nj < size and table[order[i][1]][order[i][2]] < table[ni][nj]:
+                tabulation[ni][nj] = tabulation[order[i][1]][order[i][2]] + 1
+
+    maxCount = 0
+    for i in range(size):
+        for j in range(size):
+            if maxCount < tabulation[i][j]:
+                maxCount = tabulation[i][j]
+
+    print(f'#{case + 1} {maxCount}')
 
     # # DFS
-    # # 상하좌우
-    # di = [-1, 1, 0, 0]
-    # dj = [0, 0, -1, 1]
     #
     # maxCount = 0
     # for i in range(size):
