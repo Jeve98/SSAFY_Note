@@ -20,7 +20,8 @@ flag : walk = false, attack = false, jump = false
 실수 표현 : 무한 루프 방지를 위해 부동소수점으로 근사치 처리
 >> 실제 계산에서 오차가 발생 가능
 
+
 <실습>
 
-1242
+
 """
