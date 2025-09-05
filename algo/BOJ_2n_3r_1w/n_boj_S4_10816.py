@@ -1,0 +1,6 @@
+card = int(input())
+cards = list(map(int, input().split()))
+cards.sort()
+findCount = int(input())
+find = list(map(int, input().split()))
+find.sort()
