@@ -108,6 +108,7 @@ for case in range(T):
     visited[startI][startJ] = 1
     visitCount = 1
 
+    now = 1
     while front != rear:
         # 현재 queue[front]에 존재하는 요소가 언제 input 됐는지 시간을 확인
         now = visited[queue[front][0]][queue[front][1]]
@@ -128,7 +129,7 @@ for case in range(T):
                 queue[rear] = [ni, nj]
                 rear = (rear + 1) % len(queue)
                 # visited 배열에 저장되는 값은 현재 기준이 되는 요소가 input된 시간 + 1 (다음 시간이 되어야 queue에 input되므로)
-                visited[ni][nj] = now + 1
+                visited[ni][nj] = visited[queue[front][0]][queue[front][1]] + 1
                 visitCount += 1
 
         front = (front + 1) % len(queue)
