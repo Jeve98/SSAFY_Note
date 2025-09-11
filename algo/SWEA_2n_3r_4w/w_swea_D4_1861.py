@@ -121,3 +121,47 @@ for case in range(T):
                 minNum = table[i][j]
 
     print(f'#{case + 1} {minNum} {maxCount}')
+
+# retry
+T = int(input())
+for case in range(T):
+    size = int(input())
+
+    roomSort = [0] * (size ** 2 + 1)
+    room = [0] * size
+    for i in range(size):
+        oneLine = list(map(int, input().split()))
+        room[i] = oneLine
+
+        for j in range(size):
+            roomSort[oneLine[j]] = [i, j]
+
+    # 상하좌우
+    di = [-1, 1, 0, 0]
+    dj = [0, 0, -1, 1]
+
+    dp = [[1] * size for _ in range(size)]
+    for i in range(size):
+        for j in range(size):
+            dp[i][j] = [dp[i][j], room[i][j]]
+
+    maxRoom = 0
+    index = 0
+    for i in range(1, size ** 2):
+        for addI, addJ in zip(di, dj):
+            ni = roomSort[i][0] + addI
+            nj = roomSort[i][1] + addJ
+
+            if 0 <= ni < size and 0 <= nj < size and i + 1 == room[ni][nj]:
+                if dp[ni][nj][0] < dp[roomSort[i][0]][roomSort[i][1]][0] + 1:
+                    dp[ni][nj][0] = dp[roomSort[i][0]][roomSort[i][1]][0] + 1
+                    dp[ni][nj][1] = dp[roomSort[i][0]][roomSort[i][1]][1]
+                elif dp[ni][nj][0] == dp[roomSort[i][0]][roomSort[i][1]][0] + 1:
+                    if dp[ni][nj][1] > dp[roomSort[i][0]][roomSort[i][1]][1]:
+                        dp[ni][nj][1] = dp[roomSort[i][0]][roomSort[i][1]][1]
+
+                if dp[ni][nj][0] > maxRoom:
+                    maxRoom = dp[ni][nj][0]
+                    index = dp[ni][nj][1]
+
+    print(f'#{case + 1} {index} {maxRoom}')
