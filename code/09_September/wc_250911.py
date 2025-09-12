@@ -20,15 +20,20 @@ def check(row, col):
         if visited[row - i][col - i]:
             return False
 
-    # 우측 대각선 확인
-    i = row - 1
-    j = col + 1
-    while i >= 0 and j < n:
-        if visited[i][j]:
-            return False
+    # 우측 대각선 확인 - while
+    # i = row - 1
+    # j = col + 1
+    # while i >= 0 and j < n:
+    #     if visited[i][j]:
+    #         return False
+    #
+    #     i -= 1
+    #     j += 1
 
-        i -= 1
-        j += 1
+    # 우측 대각선 확인 - for
+    for i in range(1, min(row, n - col - 1) + 1):
+        if visited[row - i][col + i]:
+            return False
 
     return True
 
@@ -96,6 +101,7 @@ def dfs(row):
             continue
 
         dfs(row + 1)
+
 
 N = 8
 visited = [0] * N
