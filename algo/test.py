@@ -1,2 +1,6 @@
-ls = [[0, i + j] for i in range(3) for j in range(3)]
-print(ls)
+a = 1 << 0
+b = 1 << 3
+c = 3
+
+print(a, b)
+print(a & c)
