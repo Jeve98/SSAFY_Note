@@ -151,3 +151,30 @@ for i in range(edgeC):
 # 출발지로부터 모든 정점들의 최단 거리
 result = dijkstra(startNode)
 print('dijkstra -', result)
+print()
+
+
+# -- Bellman-Ford
+def bellman(startNode):
+    distance = [INF] * vertexC
+    distance[startNode] = 0
+
+    for i in range(vertexC - 1):
+        for start, end, w in edgeList:
+            if distance[start] != INF and distance[end] > distance[start] + w:
+                distance[end] = distance[start] + w
+
+    # 간선의 수보다 많이 갱신된다면, 음의 사이클 발생을 의미
+    for start, end, w in edgeList:
+        if distance[start] != INF and distance[end] > distance[start] + w:
+            print('minus-cycle')
+            return
+
+    return distance
+
+
+edgeList.sort(key=lambda x: x[0])
+
+result = bellman(startNode)
+print('bellman -', result)
+print()
