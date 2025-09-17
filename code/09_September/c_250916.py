@@ -116,6 +116,7 @@ def dijkstra(startNode):
         dist, node = heappop(primaryQ)
 
         # 우선순위 큐에서 출력된 순간(값이 저장되어 있는 경우), 해당 노드에 대한 최단거리는 확정 - start 고려
+        # 성능 향상 - 이미 저장된 최소값이 존재한다면, 현재 번째의 node를 기점으로 움직이는 경로는 계산할 필요가 없음
         if distance[node] < dist:
             continue
 
@@ -123,8 +124,8 @@ def dijkstra(startNode):
             # 누적 거리 갱신
             new_dist = dist + next_dist
 
-            # 우선순위 큐에서 출력된 순간(값이 저장되어 있는 경우), 해당 노드에 대한 최단거리는 확정
-            if distance[next_node] <= dist:
+            # 이미 더 좋은 값을 가지고 있다면, heap에 불필요하게 추가할 필요가 없음
+            if distance[next_node] <= new_dist:
                 continue
 
             distance[next_node] = new_dist
@@ -172,8 +173,6 @@ def bellman(startNode):
 
     return distance
 
-
-edgeList.sort(key=lambda x: x[0])
 
 result = bellman(startNode)
 print('bellman -', result)
