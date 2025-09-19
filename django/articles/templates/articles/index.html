@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>index page</p>
-</body>
-</html>
+{% extends "articles/base.html" %}
+
+{% block content %}
+    <h1>Variable : {{ name }}</h1>
+    <h1>Varibale.attribute : {{ test.att }}</h1>
+    <a href="{% url 'articles:dinner' %}">저녁 메뉴 확인</a>
+{% endblock content %}
