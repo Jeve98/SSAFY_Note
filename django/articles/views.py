@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import random
+from .models import Article
 
 # Create your views here.
 def catch(request):
@@ -35,11 +36,10 @@ def greeting(request):
     pass
 
 def index(request):
+    articles = Article.objects.all()
+
     context = {
-        'name': 'Jane',
-        'test' : {
-            'att' : 'Dot',
-        }
+        'articles': articles,
     }
 
     return render(request, 'articles/index.html', context)
