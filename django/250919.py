@@ -41,6 +41,7 @@ Request / Response
     
     - input_tag
         * name : 서버가 입력 데이터에 접근할 Key
+        * placeholder : 입력창 내부의 기본값
 
         
 URL
