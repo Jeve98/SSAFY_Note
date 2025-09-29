@@ -8,6 +8,7 @@
 <body>
   <h1>메인 페이지</h1>
   <hr>
+  <a href="{% url "articles:create" %}">CREATE</a>
   {% comment %} 전체 게시글 출력 {% endcomment %}
   {% for article in articles %}
     <p>글 번호: {{ article.pk }}</p>
