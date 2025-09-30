@@ -32,4 +32,5 @@ urlpatterns = [
     # 클라이언트 요청 주소가 articles app에 관한 경우, 이후의 주소는 articles app의 urls.py로 전달
     path('articles/', include('articles.urls')),
     path('pages/', include('pages.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
