@@ -7,8 +7,25 @@
 </head>
 <body>
   <h1>메인 페이지</h1>
+  {% if request.user.is_authenticated %}
+    <h3>{{ user.username }}</h3>
+    <hr>
+    <form action="{% url "accounts:logout" %}" method='POST'>
+      {% csrf_token %}
+      <input type="submit" value='LOGOUT'>
+    </form>
+    <a href="{% url "accounts:update" %}">회원정보 수정</a>
+    <form action="{% url "accounts:signout" %}" method='POST'>
+      {% csrf_token %}
+      <input type="submit" value='Sign Out'>
+    </form>
+    <a href="{% url "articles:create" %}">CREATE</a>
+  {% else %}
+    <hr>
+    <a href="{% url "accounts:signup" %}">SIGNUP</a>
+    <a href="{% url "accounts:login" %}">LOGIN</a>
+  {% endif %}
   <hr>
-  <a href="{% url "articles:create" %}">CREATE</a>
   {% comment %} 전체 게시글 출력 {% endcomment %}
   {% for article in articles %}
     <p>글 번호: {{ article.pk }}</p>
