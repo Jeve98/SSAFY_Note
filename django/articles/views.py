@@ -21,7 +21,7 @@ def create(request):
     # article = Article(title=title, content=content)
     # article.save()
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             # 저장된 객체를 반환
             article = form.save()
@@ -101,7 +101,7 @@ def update(request, pk):
     # article.save()
 
     if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=article)
+        form = ArticleForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
             form.save()
 
