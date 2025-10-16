@@ -30,19 +30,27 @@ ex) 오디오, 텍스트, 비디오
         >> 초반의 떨어지는 예측 능력을 보충하기 위해 정답 단어를 decoder 입력으로 강제로 넣어주는 teacher forcing 기법을 이용
         >> Bottleneck problem : encoder는 입력 문장 전체를 하나의 벡터로 요약하여 마지막 hidden state에 문장의 모든 의미 정보가 담기는데 이때 발생할 수 있는 정보 손실을 의미
     
-    - Attention : decoder가 hidden state를 생성할 때마다 encoder의 각 hidden state와의 비교를 통해 더 적합한 단어를 생성
-        >> 성능 향상 뿐만 아니라 모델의 의사결정 과정에 대한 해석 가능성을 제공하고(AI 신뢰성 향상) word alignment의 별도 학습이 필요가 없음
+        - Attention : decoder가 hidden state를 생성할 때마다 encoder의 각 hidden state와의 비교를 통해 더 적합한 단어를 생성
+            >> 성능 향상 뿐만 아니라 모델의 의사결정 과정에 대한 해석 가능성을 제공하고(AI 신뢰성 향상) word alignment의 별도 학습이 필요가 없음
 
-    - Self-Attention : RNN이 하던 정보 전달을 각 단어 간의 관계 matrix(query, key, value 벡터)와 Attention으로 대신 처리하여 장기 의존성 문제를 해결하고 병렬화를 이룸
-        >> 순서 정보 부재, 비선형성 부족, 미래 참조 문제 발생
-            - Positional Encoding : 위치 벡터를 단어 임베딩 값에 더해 최종 입력으로 사용하는 것으로 순서 정보 부재 해결
-            - Feed-Forward Network : Fully Connected + ReLU 층을 추가하여 비선형적인 표현으로 확장
-            - Masked Self-Attention : 미래 단어에 해당하는 항목을 마스킹하여 계산을 수행할 때 반영되지 않도록 함
+        - Self-Attention : RNN이 하던 정보 전달을 각 단어 간의 관계 matrix(query, key, value 벡터)와 Attention으로 대신 처리하여 장기 의존성 문제를 해결하고 병렬화를 이룸
+            - QUERY Vector : 다른 단어와의 관계를 확인하고자 하는 현재 선택된 단어
+            - KEY Vector : 선택된 단어와 다른 단어 간의 관련 정도
+            - Value Vector : 각 단어들의 실제 의미
+            
+            >> 순서 정보 부재, 비선형성 부족, 미래 참조 문제 발생
+                * 입력
+                    - Positional Encoding : 위치 벡터를 단어 임베딩 값에 더해 최종 입력으로 사용하는 것으로 순서 정보 부재 해결
+                    - Feed-Forward Network : Fully Connected + ReLU 층을 추가하여 비선형적인 표현으로 확장
+                * 출력
+                    - Masked Self-Attention : 미래 단어에 해당하는 항목을 마스킹하여 계산을 수행할 때 반영되지 않도록 함
 
     - Transformer : encoder[입력 문장의 의미적 표현으로의 변환]-decoder[인코더 표현과 지금까지 생성한 단어를 입력으로 다음 단어 예측] 구조로 설계된 신경만 모델로 n개의 decoder 블록으로 이루어짐
         * Multi-Headed Attention : 다수의 attention을 통해 다양한 관점에서 동시에 정보 파악
         * Residual Connection : 깊은 층의 학습을 위해 layer가 전체를 예측하는 것이 아닌 기존 입력과의 차이만을 학습
         * Layer Normalization
+        
+        >> 기존의 encoder, decoder에 사용하던 RNN을 self-attention으로 대체한 것
 
 
 <실습>
