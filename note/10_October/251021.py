@@ -21,7 +21,7 @@ Post training : 사람이 원하는 방식으로 대화하고 안전하고 유�
 ex) Deepseek
 
 
-ㅁㅁRAG(Retrieval-augmented Generation) : 정보 검색부터 답변 생성까지의 프레임워크
+RAG(Retrieval-augmented Generation) : 정보 검색부터 답변 생성까지의 프레임워크
 - Information Retrieval (정보 검색) : Query에 맞는 정보를 Datastore에서 찾아 제공하는 과정
     ex) Recommender System, 검색 증강 생성(검색된 결과-Non Parametric Knowledge를 활용한 더 정확한 답변 생성)
     - Sparse Retriever (어휘적 유사도 기반) : Query와 Non Parametricc Knowledge 간의 유사도, 관련도를 기반으로 검색하는 방법
@@ -33,7 +33,7 @@ ex) Deepseek
 
 Agent : 센서를 통해 환경을 인지하고 Actuator를 통해 환경에 대해 액션을 취해 영향을 미치는 것으로 간주될 수 있는 모든 것
 - 도구 : 언어 모델 외부에서 실행되는 프로그램에 연결되는 함수 인터페이스로 Physical interaction-based, GUI based, Program based tool로 나뉨
-    ㅁㅁ- tool learning : 모방학습
+    - tool learning : 모방학습을 통해 특정 작업 수행에 필요한 도구 사용법을 학습하는 과정
 
     - MCP(Model Context Protocol) : 외부 툴 활용이 급증하며 이로 인한 호환성 부족이나 낮은 재사용성을 보완하기 위한 표준화된 프로토콜
         - MCP 아키텍처
@@ -60,7 +60,7 @@ Agent : 센서를 통해 환경을 인지하고 Actuator를 통해 환경에 대
 - 상호작용 및 의사소통
 
 
-- Langchain 
+- Langchain : 언어 모델을 활용한 어플리케이션 구축 및 확장에 사용되는 라이브러리로 다수의 작업을 연결하여 하나의 복잡한 프로세스를 만들며 확장성과 유연성, 활용도가 높고 모듈화가 가능
 
 
 <실습>
