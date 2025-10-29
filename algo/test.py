@@ -1,6 +1,3 @@
-a = 1 << 0
-b = 1 << 3
-c = 3
-
-print(a, b)
-print(a & c)
+a = 'a  s fw  as  sdasd s'
+b = a.split()
+print(b, type(b))
