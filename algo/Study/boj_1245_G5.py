@@ -23,14 +23,16 @@ def search(pos):
         nj = addJ + pos[1]
 
         if 0 <= ni < row and 0 <= nj < col and board[pos[0]][pos[1]] < board[ni][nj]:
-            return True
-        elif 0 <= ni < row and 0 <= nj < col and not visited[ni][nj] and board[pos[0]][pos[1]] == board[ni][nj]:
-            no = search([ni, nj])
+            no = True
+        elif pos[0] <= ni < row and pos[1] <= nj < col and board[pos[0]][pos[1]] == board[ni][nj]:
+            if visited[ni][nj]:
+                no = True
+
             if no:
-                return True
-        elif 0 <= ni < row and 0 <= nj < col and board[pos[0]][pos[1]] == board[ni][nj]:
-            pass
-    
+                search([ni, nj])
+            else:
+                no = search([ni, nj])
+
     return no
 
 
