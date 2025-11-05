@@ -18,6 +18,24 @@
   <p>작성일 : {{ article.created_at }}</p>
   <p>수정일 : {{ article.updated_at }}</p>
   <hr>
+  <ul>
+      {% for comment in comments %}
+        <li>
+          {{ comment.content }}
+          <form action="{% url "articles:comments_delete" article.pk comment.pk %}" method='POST'>
+            {% csrf_token %}
+            <input type="submit" value='delete'>
+          </form>
+        </li>
+      {% endfor %}    
+  </ul>
+  <hr>
+  <form action="{% url "articles:comments_create" article.pk %}" method='POST'>
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit">
+  </form>
+  <hr>
   <form action="{% url "articles:delete" article.pk %}" method='POST'>
     {% csrf_token %}
     <input type="submit" value='delete'>
