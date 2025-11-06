@@ -13,6 +13,9 @@ N:M relation : 다수의 record가 다수의 record와 연결된 것으로 중�
         - CASCADE : 참조 된 부모 객체 삭제 시, 이를 참조하는 모든 자식 객체 삭제
         - PROTECT : 부모 객체 삭제 불가
         - SET_NULL : 부모 객체 삭제 시, 해당 field 값이 null로 지정
+    
+    ※ 서로 다른 app의 model을 참조하는 경우, 특정 클래스 생성 시점을 보장할 수 없으므로 직접 import 하는 것이 아니라 settings의 값을 이용함
+        ex) user
 
 - 일반적으로 외래키를 보유하고 있지 않은 table의 역참조는 어렵기 때문에 related manager[className_set]를 통해 두 table을 join하여 역참조 실행
 ※ 참조 : 직접 대상의 정보를 저장하고 필요할 때 활용하는 것
