@@ -4,7 +4,7 @@
 <DB 라이브 강의>
 
 1:1 relation : 한 table의 record는 다른 table의 한 record와 연결
-N:1 relation : 한 테이블의 0개 이상의 record가 다른 table의 하나의 record와 연결
+N:1 relation : 한 테이블의 0개 이상의 record가 다른 table의 하나의 record와 연결 (통상적으로 N의 table이 1의 table에 종속된다고 봄)
 N:M relation : 다수의 record가 다수의 record와 연결된 것으로 중간 table을 사용해 구현
 
 외래키 : 통상적으로 N의 위치에 생성되어 1에 해당하는 table의 primary key를 사용
