@@ -9,6 +9,8 @@ N:M Relationships : 한 table의 0개 이상의 record가 다른 table의 0개 �
     <Django>
     - ManyToManyField() : OOP의 관점에서 각 객체(Table)이 중심이 되기 위해, 중개 모델이 관계를 형성하지 않고 각자 생성할 수 있도록 표현하는 방법으로 중개 table에 대한 정의가 필요 없음
         ex) models.ManyToManyField(Target_Model)
+            ※ 자기 자신에 대한 관계를 확인할 경우, Target_Model을 'self'로 대체 가능
+        
         * .add() : 관계 추가 [object.model.add() || object.model_set.add()]
         * .remove() : 관계 삭제 [object.model.remove() || object.model_set.remove()]
         
