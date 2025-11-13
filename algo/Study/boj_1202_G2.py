@@ -18,7 +18,7 @@ for i in range(bagC):
     for j in range(gemC):
         if bag[i] >= gem[j][0]:
             ans += gem[j][1]
-            gem[j][0] = 2100000000
+            gem[j][0] = 100000001
             break
 
 print(ans)

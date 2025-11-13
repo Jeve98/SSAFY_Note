@@ -43,7 +43,24 @@ DRF(Django REST Framework) : Django에서 RESTful API 서버를 쉽게 구축할
 - Serialization [직렬화] : 여러 시스템에서 활용하기 위해 데이터 구조, 객체 상태를 재구성할 수 있는 포맷으로 변환하는 과정
     - Serializer : 직렬화를 통해 serialized data를 반환해주는 클래스
     - ModelSerializer : Django Model과 연결된 Serializer 클래스
+        ※ MTM 관계에서 save 이전에 외래키에 대한 검증이 진행되어 문제가 발생하므로 해당 field에 read-only 설정을 해줌
+        ※ read_only_fields : 클라이언트의 직접 수정이 불가하고 서버 로직에 의해 자동 생성/관리되는 응답 전용 field로, 입력은 받지 않으나 정보를 제공하는 경우 혹은 새로운 field 값을 생성하여 제공하는 경우에 사용
+        
+        - Nested Relationships : 역참조한 값을 직렬화하기 위해서 명령어로만 존재하는 역참조 매니저를 serializer class 내부에서 새로운 fields로 선언하며, 이때 역참조 대상에 대한 serializer class로 할당
 
+        - 신규 field 추가 : views에서 annotate(improve query)를 활용하여 새로운 field를 추가한 뒤, 집계함수로 계산한 값을 할당하고 serializer에서 SerializerMethodField로 인스턴스 정의 및 해당 인스턴스에 값을 할당하기 위해 get_instance_name 함수를 생성
+            ex) num_of_commnets = serializer.SerializerMethodField(), def get_num_of_commnets(self, obj): return obj.num_of_commnets
+                ※ obj : 직렬화 class에서 사용하는 model을 의미
+
+                
+※ get_object_or_404(model, pk) : 단일 객체 조회 시, 없는 데이터에 접근에 대한 오류 코드를 500 대신 404로 변경
+※ get_list_or_404(model, pk) : 전체 조회 시, 없는 데이터에 접근에 대한 오류 코드를 500 대신 404로 변경
+
+
+API 문서화
+- OAS(OpenAPI Specification) : RESTful API를 설명하고 시각화하는 표준화된 방법
+    - Swagger / Redoc : 오픈소스 프레임워크 [pip install drf-spectacular, settings.py에 등록]
+        
 
 <실습>
 
