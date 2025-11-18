@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('algo/input.txt', 'r')
+# import sys
+# sys.stdin = open('algo/input.txt', 'r')
 
 from heapq import heappush as hpush, heappop as hpop
 

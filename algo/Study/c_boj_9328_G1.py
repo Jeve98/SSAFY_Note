@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('algo/input.txt', 'r')
+# import sys
+# sys.stdin = open('algo/input.txt', 'r')
 
 from collections import deque
 
@@ -12,13 +12,13 @@ from collections import deque
 
 
 def opening(key):
-    if key == '0':
+    if key == "0":
         return
-        
-    temp = ord(key) - ord('A') - alpha
+
+    temp = ord(key) - ord("A") - alpha
 
     for pos in door[temp]:
-        board[pos[0]][pos[1]] = '.'
+        board[pos[0]][pos[1]] = "."
 
         if pos[0] == 0 or pos[0] == row - 1 or pos[1] == 0 or pos[1] == col - 1:
             entrance.append(pos)
@@ -43,18 +43,23 @@ def BFS(pos):
             ni = now[0] + addI
             nj = now[1] + addJ
 
-            if 0 <= ni < row and 0 <= nj < col and not visited[ni][nj] and (board[ni][nj] in ['.', '$'] or ord(board[ni][nj]) - ord('a') >= 0):
+            if (
+                0 <= ni < row
+                and 0 <= nj < col
+                and not visited[ni][nj]
+                and (board[ni][nj] in [".", "$"] or ord(board[ni][nj]) - ord("a") >= 0)
+            ):
                 queue.append([ni, nj])
                 visited[ni][nj] = True
 
-                if ord(board[ni][nj]) - ord('a') >= 0:
+                if ord(board[ni][nj]) - ord("a") >= 0:
                     opening(board[ni][nj])
-                    board[ni][nj] = '.'
+                    board[ni][nj] = "."
                     find = True
-                elif board[ni][nj] == '$':
+                elif board[ni][nj] == "$":
                     count += 1
-                    board[ni][nj] = '.'
-    
+                    board[ni][nj] = "."
+
     return find
 
 
@@ -76,24 +81,26 @@ for test in range(tCase):
         board[i] = list(input())
 
         for j in range(col):
-            if (board[i][j] in ['.', '$'] or ord(board[i][j]) - ord('a') >= 0) and (i == 0 or i == row - 1 or j == 0 or j == col - 1):
+            if (board[i][j] in [".", "$"] or ord(board[i][j]) - ord("a") >= 0) and (
+                i == 0 or i == row - 1 or j == 0 or j == col - 1
+            ):
                 entrance.append([i, j])
-                if board[i][j] == '$':
+                if board[i][j] == "$":
                     count += 1
-                    board[i][j] = '.'
-                elif ord(board[i][j]) - ord('a') >= 0:
+                    board[i][j] = "."
+                elif ord(board[i][j]) - ord("a") >= 0:
                     inventory.append(board[i][j])
-                    board[i][j] = '.'
+                    board[i][j] = "."
 
-            temp = ord(board[i][j]) - ord('A')          
+            temp = ord(board[i][j]) - ord("A")
             if 25 >= temp >= 0:
                 door[temp].append([i, j])
-            
+
     inventory.extend(list(input()))
-    alpha = ord('a') - ord('A')
+    alpha = ord("a") - ord("A")
     for key in inventory:
         opening(key)
-    
+
     while True:
         # 입구가 없는 경우
         if not entrance:
@@ -107,9 +114,9 @@ for test in range(tCase):
             find = BFS(one)
             if not new:
                 new = find
-        
+
         # 획득 표시가 없는 경우 == 추가적인 변화가 없는 경우, 탐색 종료
         if not new:
             break
-    
+
     print(count)
