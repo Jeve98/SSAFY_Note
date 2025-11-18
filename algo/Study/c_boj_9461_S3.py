@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('algo/input.txt', 'r')
+# import sys
+# sys.stdin = open('algo/input.txt', 'r')
 
 T = int(input())
 for tCase in range(T):
